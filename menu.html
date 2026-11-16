@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BariSta | Меню</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <!-- Убрал точку из логотипа -->
+        <a href="index.html" class="logo">Bari<span>Sta</span></a>
+        <div class="nav-links">
+            <a href="index.html">Главная</a>
+            <a href="menu.html" class="active">Меню</a>
+            <a href="contacts.html">Контакты</a>
+            <a href="#" onclick="toggleCart()">Корзина (<span id="cart-count">0</span>)</a>
+        </div>
+    </nav>
+
+    <div class="menu-container">
+        <h1 class="page-title">Наше меню</h1>
+        
+        <div class="filters">
+            <button class="filter-btn active" onclick="filter('all', this)">Всё</button>
+            <button class="filter-btn" onclick="filter('coffee', this)">Кофе</button>
+            <button class="filter-btn" onclick="filter('snacks', this)">Закуски</button>
+        </div>
+
+        <div class="menu-grid" id="grid">
+            <!-- 20 ВИДОВ КОФЕ -->
+            <div class="menu-item" data-cat="coffee" onclick="addToCart('Эспрессо', 150)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04&w=200" alt="Эспрессо">
+                <div class="menu-info"><h3>Эспрессо</h3><p>Классический концентрированный шот.</p></div>
+                <div class="menu-price">150 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="coffee" onclick="addToCart('Американо', 180)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1551030173-122aabc4489c&w=200" alt="Американо">
+                <div class="menu-info"><h3>Американо</h3><p>Эспрессо с добавлением горячей воды.</p></div>
+                <div class="menu-price">180 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="coffee" onclick="addToCart('Капучино', 220)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1534778101976-62847782c213&w=200" alt="Капучино">
+                <div class="menu-info"><h3>Капучино</h3><p>Эспрессо с бархатной молочной пенкой.</p></div>
+                <div class="menu-price">220 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="coffee" onclick="addToCart('Латте', 240)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1461023058943-07fcbe16d735&w=200" alt="Латте">
+                <div class="menu-info"><h3>Латте</h3><p>Нежный кофейный напиток с молоком.</p></div>
+                <div class="menu-price">240 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="coffee" onclick="addToCart('Флэт Уайт', 250)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1572442388796-11668a67e53d&w=200" alt="Флэт Уайт">
+                <div class="menu-info"><h3>Флэт Уайт</h3><p>Двойной эспрессо с тонким слоем молока.</p></div>
+                <div class="menu-price">250 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="coffee" onclick="addToCart('Мокко', 260)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1578314675249-a6910f80cc4e&w=200" alt="Мокко">
+                <div class="menu-info"><h3>Мокко</h3><p>Кофе с добавлением шоколада.</p></div>
+                <div class="menu-price">260 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="coffee" onclick="addToCart('Раф', 270)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1620916566398-39f1143ab7be&w=200" alt="Раф">
+                <div class="menu-info"><h3>Раф</h3><p>Сливки, эспрессо и ванильный сахар.</p></div>
+                <div class="menu-price">270 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="coffee" onclick="addToCart('Кортадо', 230)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1551030173-122aabc4489c&w=200" alt="Кортадо">
+                <div class="menu-info"><h3>Кортадо</h3><p>Эспрессо с равным количеством молока.</p></div>
+                <div class="menu-price">230 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="coffee" onclick="addToCart('Макиато', 190)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04&w=200" alt="Макиато">
+                <div class="menu-info"><h3>Макиато</h3><p>Эспрессо с каплей молочной пены.</p></div>
+                <div class="menu-price">190 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="coffee" onclick="addToCart('Гляссе', 290)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1534778101976-62847782c213&w=200" alt="Гляссе">
+                <div class="menu-info"><h3>Гляссе</h3><p>Холодный кофе с шариком мороженого.</p></div>
+                <div class="menu-price">290 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="coffee" onclick="addToCart('Бамбл', 280)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1541167760496-1628856ab772&w=200" alt="Бамбл">
+                <div class="menu-info"><h3>Бамбл</h3><p>Кофе с апельсиновым соком.</p></div>
+                <div class="menu-price">280 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="coffee" onclick="addToCart('Эспрессо Тоник', 300)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1610889556528-9a770e32642f&w=200" alt="Эспрессо Тоник">
+                <div class="menu-info"><h3>Эспрессо Тоник</h3><p>Освежающий микс кофе и тоника.</p></div>
+                <div class="menu-price">300 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="coffee" onclick="addToCart('Фраппе', 320)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1572490122747-3968b75cc699&w=200" alt="Фраппе">
+                <div class="menu-info"><h3>Фраппе</h3><p>Взбитый холодный кофе.</p></div>
+                <div class="menu-price">320 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="coffee" onclick="addToCart('Айс Латте', 250)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1517701604599-bb29b565090c&w=200" alt="Айс Латте">
+                <div class="menu-info"><h3>Айс Латте</h3><p>Холодный латте со льдом.</p></div>
+                <div class="menu-price">250 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="coffee" onclick="addToCart('Колд Брю', 270)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1461023058943-07fcbe16d735&w=200" alt="Колд Брю">
+                <div class="menu-info"><h3>Колд Брю</h3><p>Кофе холодной экстракции.</p></div>
+                <div class="menu-price">270 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="coffee" onclick="addToCart('Эспрессо Романо', 170)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1551030173-122aabc4489c&w=200" alt="Романо">
+                <div class="menu-info"><h3>Эспрессо Романо</h3><p>С добавлением лимона.</p></div>
+                <div class="menu-price">170 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="coffee" onclick="addToCart('Ирландский кофе', 350)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1510591509098-f4fdc6d0ff04&w=200" alt="Ирландский">
+                <div class="menu-info"><h3>Ирландский кофе</h3><p>С добавлением сиропа.</p></div>
+                <div class="menu-price">350 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="coffee" onclick="addToCart('Венский кофе', 310)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1534778101976-62847782c213&w=200" alt="Венский">
+                <div class="menu-info"><h3>Венский кофе</h3><p>Со взбитыми сливками.</p></div>
+                <div class="menu-price">310 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="coffee" onclick="addToCart('По-восточному', 200)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1509042239860-f550ce710b93&w=200" alt="Восточный">
+                <div class="menu-info"><h3>По-восточному</h3><p>Сваренный в турке.</p></div>
+                <div class="menu-price">200 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="coffee" onclick="addToCart('Фреддо', 280)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1572490122747-3968b75cc699&w=200" alt="Фреддо">
+                <div class="menu-info"><h3>Фреддо Эспрессо</h3><p>Взбитый эспрессо со льдом.</p></div>
+                <div class="menu-price">280 ₽</div>
+            </div>
+
+            <!-- 10 ВИДОВ ЗАКУСОК -->
+            <div class="menu-item" data-cat="snacks" onclick="addToCart('Круассан', 150)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1555507036-ab1f4038808a&w=200" alt="Круассан">
+                <div class="menu-info"><h3>Круассан</h3><p>Классический французский.</p></div>
+                <div class="menu-price">150 ₽</div>
+            </div>
+            <!-- НОВАЯ ССЫЛКА НА СИННАБОН -->
+            <div class="menu-item" data-cat="snacks" onclick="addToCart('Синнабон', 200)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1586444248902-2f64eddc13df&w=200" alt="Синнабон">
+                <div class="menu-info"><h3>Синнабон</h3><p>С корицей и глазурью.</p></div>
+                <div class="menu-price">200 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="snacks" onclick="addToCart('Чизкейк', 250)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1533134242443-d4fd215305ad&w=200" alt="Чизкейк">
+                <div class="menu-info"><h3>Чизкейк</h3><p>Нежный сливочный вкус.</p></div>
+                <div class="menu-price">250 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="snacks" onclick="addToCart('Тирамису', 280)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1571115177098-24ec42ed204d&w=200" alt="Тирамису">
+                <div class="menu-info"><h3>Тирамису</h3><p>Итальянский десерт с кофе.</p></div>
+                <div class="menu-price">280 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="snacks" onclick="addToCart('Сэндвич с курицей', 220)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1528735602780-2552fd46c7af&w=200" alt="Сэндвич">
+                <div class="menu-info"><h3>Сэндвич с курицей</h3><p>Свежий хлеб, курица, овощи.</p></div>
+                <div class="menu-price">220 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="snacks" onclick="addToCart('Сэндвич с лососем', 320)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1553909489-cd47e0907980&w=200" alt="Сэндвич с лососем">
+                <div class="menu-info"><h3>Сэндвич с лососем</h3><p>Слабосоленый лосось и крем-сыр.</p></div>
+                <div class="menu-price">320 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="snacks" onclick="addToCart('Маффин', 180)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1607958996333-41aef7caefaa&w=200" alt="Маффин">
+                <div class="menu-info"><h3>Маффин</h3><p>Шоколадный или с черникой.</p></div>
+                <div class="menu-price">180 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="snacks" onclick="addToCart('Брауни', 190)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1606313564200-e75d5e30476c&w=200" alt="Брауни">
+                <div class="menu-info"><h3>Брауни</h3><p>Насыщенный шоколадный вкус.</p></div>
+                <div class="menu-price">190 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="snacks" onclick="addToCart('Печенье', 100)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1499636136210-6f4ee915583e&w=200" alt="Печенье">
+                <div class="menu-info"><h3>Печенье</h3><p>Овсяное с изюмом.</p></div>
+                <div class="menu-price">100 ₽</div>
+            </div>
+            <div class="menu-item" data-cat="snacks" onclick="addToCart('Морковный торт', 260)">
+                <img src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1621303837174-89787a7d4729&w=200" alt="Морковный торт">
+                <div class="menu-info"><h3>Морковный торт</h3><p>С грецким орехом.</p></div>
+                <div class="menu-price">260 ₽</div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 BariSta. Волгоград, ул. Лазоревая 223.</p>
+    </footer>
+
+    <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-header"><h2>Заказ</h2><button onclick="toggleCart()">✕</button></div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="total"><span>Итого:</span> <span id="cart-total">0 ₽</span></div>
+            <button class="checkout" onclick="checkout()">Оформить</button>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

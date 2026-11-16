@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BariSta | Контакты</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">Bari<span>Sta</span></a>
+        <div class="nav-links">
+            <a href="index.html">Главная</a>
+            <a href="menu.html">Меню</a>
+            <a href="contacts.html" class="active">Контакты</a>
+            <a href="#" onclick="toggleCart()">Корзина (<span id="cart-count">0</span>)</a>
+        </div>
+    </nav>
+
+    <div class="contacts-page">
+        <div class="contact-info">
+            <h1>Ждем вас <br>в гости</h1>
+            <p>📍 <strong>Адрес:</strong> г. Волгоград, ул. Лазоревая, 223 (Красноармейский район)</p>
+            <p>🕒 <strong>Режим работы:</strong> Пн-Вс с 08:00 до 22:00</p>
+            <p>📞 <strong>Телефон:</strong> +7 (8442) 55-66-77</p>
+            <p>📸 <strong>Instagram:</strong> @barista_vlg</p>
+            <br>
+            <a href="menu.html" class="btn" style="margin-top: 20px;">Сделать заказ</a>
+        </div>
+        
+        <!-- КАРТА С ТОЧНЫМИ КООРДИНАТАМИ (OpenStreetMap) -->
+        <div class="map-box" style="padding: 0; overflow: hidden; border-radius: 20px;">
+            <iframe 
+                width="100%" 
+                height="100%" 
+                frameborder="0" 
+                scrolling="no" 
+                marginheight="0" 
+                marginwidth="0" 
+                src="https://www.openstreetmap.org/export/embed.html?bbox=44.4663%2C48.5197%2C44.4863%2C48.5397&layer=mapnik&marker=48.5297%2C44.4763"
+                style="border: 1px solid black">
+            </iframe>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 BariSta Волгоград, ул. Лазоревая 223.</p>
+    </footer>
+
+    <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-header"><h2>Корзина</h2><button onclick="toggleCart()">✕</button></div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="total"><span>Итого:</span> <span id="cart-total">0 ₽</span></div>
+            <button class="checkout" onclick="checkout()">Оформить заказ</button>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>

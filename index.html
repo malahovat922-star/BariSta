@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BariSta | Кофейня в Волгограде</title>
+    
+    <!-- SEO и превьюшка для мессенджеров -->
+    <meta name="description" content="Настоящий кофе в Красноармейском районе Волгограда. Свежая обжарка, уютная атмосфера.">
+    <meta property="og:title" content="BariSta | Кофейня в Волгограде">
+    <meta property="og:description" content="Заходите за своим настроением. Лазоревая 223.">
+    
+    <!-- Фавиконка (иконка чашки) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>☕</text></svg>">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">Bari<span>Sta</span></a>
+        <div class="nav-links">
+            <a href="index.html" class="active">Главная</a>
+            <a href="menu.html">Меню</a>
+            <a href="contacts.html">Контакты</a>
+            <a href="#" onclick="toggleCart()">Корзина (<span id="cart-count">0</span>)</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-text">
+            <h1>Кофе, который<br>бьет в сердце</h1>
+            <p>Обжарка, которая меняет всё. Без лишнего пафоса, только настоящий вкус в Красноармейском районе.</p>
+            <a href="menu.html" class="btn">Посмотреть меню</a>
+        </div>
+        <img class="hero-img" src="https://wsrv.nl/?url=https://images.unsplash.com/photo-1497935586351-b67a49e012bf&w=1000" alt="Coffee Shop">
+    </header>
+
+    <footer>
+        <p>&copy; 2026 BariSta. Волгоград, ул. Лазоревая 223.</p>
+    </footer>
+
+    <div class="overlay" id="overlay" onclick="toggleCart()"></div>
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-header"><h2>Заказ</h2><button onclick="toggleCart()">✕</button></div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="total"><span>Итого:</span> <span id="cart-total">0 ₽</span></div>
+            <button class="checkout" onclick="checkout()">Оформить</button>
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+</html>
